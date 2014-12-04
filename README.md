@@ -5,3 +5,5 @@ This is a really cool app that helps people have gifts sent to their loved ones 
 * Rails 
 * Bootstrap
 * Devise
+
+Created by :Pete, Sylvain, Matt, Vijay, Kris, Felipe, Sean, Trent
