@@ -22,17 +22,17 @@ respond_to :html
     @recipient = Recipient.new(recipient_params)
     @recipient.user = current_user
     @recipient.save
-    respond_with(@recipient)
+    redirect_to user_account_path(current_user.user_account)
   end
 
   def update
     @recipient.update(recipient_params)
-    respond_with(@recipient)
+    redirect_to user_account_path(current_user.user_account)
   end
 
   def destroy
     @recipient.destroy
-    respond_with(@recipient)
+    redirect_to user_account_path(current_user.user_account)
   end
 
   private

@@ -1,5 +1,5 @@
 class UserAccountsController < ApplicationController
-  before_action :set_user_account, only: [:show, :edit, :update, :destroy]
+  before_action :set_user_account, only: [:edit, :update, :destroy]
 respond_to :html
   def index
     @user_accounts = UserAccount.all
@@ -7,6 +7,8 @@ respond_to :html
   end
 
   def show
+    @user_account = current_user.user_account
+    @recipients = current_user.recipients
     respond_with(@user_account)
   end
 

@@ -13,7 +13,7 @@ class OccasionsController < ApplicationController
 
   def new
     @occasion = Occasion.new
-    @recipients = Recipient.all
+    @recipient = Recipient.find(params[:recipient])
     respond_with(@occasion)
   end
 
@@ -23,17 +23,17 @@ class OccasionsController < ApplicationController
   def create
     @occasion = Occasion.new(occasion_params)
     @occasion.save
-    respond_with(@occasion)
+    redirect_to user_account_path(current_user.user_account)
   end
 
   def update
     @occasion.update(occasion_params)
-    respond_with(@occasion)
+    redirect_to user_account_path(current_user.user_account)
   end
 
   def destroy
     @occasion.destroy
-    respond_with(@occasion)
+    redirect_to user_account_path(current_user.user_account)
   end
 
   private
