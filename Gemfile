@@ -13,6 +13,9 @@ gem 'devise'
 gem 'rolify'
 gem 'cancan'
 
+gem 'friendly_id'
+gem 'acts-as-taggable-on'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

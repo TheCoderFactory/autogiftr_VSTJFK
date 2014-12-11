@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
+  # get 'best-coding-course-ever', to: 'courses#index'
   resources :recipients
 
   resources :user_accounts

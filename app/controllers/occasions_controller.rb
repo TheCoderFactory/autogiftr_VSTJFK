@@ -9,6 +9,7 @@ class OccasionsController < ApplicationController
 
   def gifts_delivered_for
     @occasion.update_attributes(delivered: true)
+    NotificationMailer.notify(@occasion.id).deliver
     redirect_to :back
   end
 

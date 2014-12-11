@@ -3,7 +3,11 @@ class GiftsController < ApplicationController
 
   respond_to :html
   def index
-    @gifts = Gift.all
+    if params[:tag]
+      @gifts = Gift.tagged_with(params[:tag])
+    else
+      @gifts = Gift.all
+    end
     respond_with(@gifts)
   end
 
@@ -40,10 +44,10 @@ class GiftsController < ApplicationController
 
   private
     def set_gift
-      @gift = Gift.find(params[:id])
+      @gift = Gift.friendly.find(params[:id])
     end
 
     def gift_params
-      params.require(:gift).permit(:name, :description, :price, :picture)
+      params.require(:gift).permit(:name, :description, :price, :picture, :tag_list)
     end
 end

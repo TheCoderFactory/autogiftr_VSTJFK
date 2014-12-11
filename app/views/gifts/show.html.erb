@@ -13,6 +13,12 @@
 				<p><%= number_to_currency(@gift.price) %></p>
 				<br>
 
+				<p><strong>Tags</strong></p>
+				<% @gift.tags.each do |tag| %>
+					<a href="<%= gifts_path(tag: tag.name) %>" class="btn btn-xs btn-primary"><%= tag %></a> &nbsp;
+				<% end %>
+				<br>
+
 				<% if user_signed_in? %>
 					<% if current_user.has_role? :admin %>
 						<%= link_to 'Edit', edit_gift_path(@gift), class: 'btn btn-info btn-xs' %>

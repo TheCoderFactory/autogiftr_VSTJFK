@@ -12,7 +12,7 @@ class Occasion < ActiveRecord::Base
 	end
 
 	def self.undelivered
-		where('delivered != ?', true)
+		where(delivered: nil)
 	end
 
 	def self.delivered

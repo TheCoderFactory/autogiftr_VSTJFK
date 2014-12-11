@@ -13,3 +13,6 @@ puts "user1 created"
 user2 = User.create(email: 'user@example.com', password: 'password')
 user2.user_account = UserAccount.create(name: 'User')
 puts "user2 created"
+
+gift1 = Gift.create(name: 'Roses', price: 100.0)
+gift2 = Gift.create(name: 'Horse ride', price: 200.0)
